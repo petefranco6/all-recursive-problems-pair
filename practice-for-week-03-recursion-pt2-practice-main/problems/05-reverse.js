@@ -15,8 +15,19 @@ reverse(""); // ""
 
 function reverse(str) {
   // Your code here
+  if(str.length <=1){
+    return str;
+  } else {
+    return reverse(str.substr(1)) + str.charAt(0);
+  }
 }
 
+reverse("house"); // "esuoh"
+reverse("dog"); // "god"
+reverse("atom"); // "mota"
+reverse("q"); // "q"
+reverse("id"); // "di"
+reverse(""); // ""
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
