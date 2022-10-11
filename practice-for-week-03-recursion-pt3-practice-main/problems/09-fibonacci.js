@@ -19,17 +19,25 @@ fibonacci(4); // 3
 fibonacci(10); // 55
 ***********************************************************************/
 
+// function fibonacci(n) {
+//   if(n < 2) {
+//     return n
+//   }
+//   let num = fibonacci(n-1) + fibonacci(n-2)
+//   console.log(fibonacci(0))
+//   return num
+// }
+
 function fibonacci(n) {
-  if(n < 2) {
-    return n
+  if (n === 1 || n === 2) {
+      return 1;
   }
-  let num = fibonacci(n-1) + fibonacci(n-2)
-  console.log(fibonacci(0))
-  return num
+
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 //fibonacci(1); // 1
-fibonacci(2); // 1
+console.log(fibonacci(0)); // 1
 //fibonacci(3); // 2
 //fibonacci(4); // 3
 //fibonacci(10); // 55
