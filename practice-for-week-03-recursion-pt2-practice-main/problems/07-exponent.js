@@ -20,19 +20,29 @@ exponent(2, -2); // 1/4 (or 0.25)
 exponent(5, 5); // 3125
 ***********************************************************************/
 
+// function exponent(num, power) {
+//    if(power > 1) {
+//     return num * exponent(num, power -1)
+//    }
+//    if(power === 1) {
+//     return num
+//    }
+//    if(power < 1) {
+//     return 1/num * exponent(num, power+1)
+//    }
+//    if (power === -1) {
+//     return num
+//    }
+// }
+
 function exponent(num, power) {
-   if(power > 1) {
-    return num * exponent(num, power -1)
-   }
-   if(power === 1) {
-    return num
-   }
-   if(power < 1) {
-    return 1/num * exponent(num, power+1)
-   }
-   if (power === -1) {
-    return num
-   }
+    if(power === 0){
+        return 1;
+    } else if( power > 0){
+        return exponent(num, power - 1) * num;
+     }else { 
+        return exponent(num, power + 1) * (1/num)
+     }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
