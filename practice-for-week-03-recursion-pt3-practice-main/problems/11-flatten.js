@@ -12,16 +12,35 @@ flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
-function flatten(arr, output =[]) {
-  if(arr.length === 0 ) return output;
-  let first = arr[0];
-  let rest = arr.slice(1);
-  if(Array.isArray(first)) {
-     return flatten(first.concat(rest), output)
-  }
-  output.push(first)
-  return flatten(rest, output)
+// function flatten(arr, output =[]) {
+//   if(arr.length === 0 ) return output;
+//   let first = arr[0];
+//   let rest = arr.slice(1);
+//   if(Array.isArray(first)) {
+//      return flatten(first.concat(rest), output)
+//   }
+//   output.push(first)
+//   return flatten(rest, output)
+// }
+
+
+
+function flatten(arr) {
+  let newArray = [];
+
+  arr.forEach(function (contents) {
+      if (Array.isArray(contents)) {
+        newArray.push(...flatten(contents));
+      } else {
+        newArray.push(contents);
+      }
+  });
+
+  return newArray;
 }
+  
+
+
 
 //console.log(flatten([1, 2])); // [1, 2]
 console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
