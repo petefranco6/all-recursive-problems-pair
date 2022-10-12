@@ -27,7 +27,7 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 const subsets = ([first, ...xs], ys = []) =>
   first === undefined ? [ys] : [...subsets(xs, ys), ...subsets(xs, [...ys, first])];
 
-console.log(subsets([1,2]))
+console.log(subsets([1]))
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
